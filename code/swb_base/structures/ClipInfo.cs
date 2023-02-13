@@ -85,7 +85,7 @@ public partial class ClipInfo : BaseNetworkable
     [Net] public string BarrelSmokeParticle { get; set; } = "particles/swb/muzzle/barrel_smoke.vpcf";
 
     /// <summary>Particle used for the barrel smoke</summary>
-    [Net] public string BulletTracerParticle { get; set; } = "particles/swb/tracer/tracer_medium.vpcf";
+    [Net] public string BulletTracerParticle { get; set; } = "particles/swb/tracer/tracer_medium_v2.vpcf";
 
     // Extra // 
 

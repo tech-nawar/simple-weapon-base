@@ -60,7 +60,7 @@ public class BulletEntity : Entity
 
     private float damage = 0f;
     private float gravScale = 1f;
-    private float maxLifeTime = 5f;
+    private float maxLifeTime = 10f;
     private float bulletSize = 0f;
     private float bulletMass = 0f;
     private float force = 0f;
@@ -114,11 +114,11 @@ public class BulletEntity : Entity
         timeSinceFire = 0;
 
         var random = new Random();
-        createParticle = random.Next(0, 2) == 0;
+        createParticle = random.Next(1, weapon.BulletTracerChance) == 1;
 
         if (createParticle)
         {
-            var randVal = random.Float(0.15f);
+            var randVal = random.Float(0.02f);
             particleDelay = randVal;
         }
 
@@ -165,18 +165,31 @@ public class BulletEntity : Entity
         }
     }
 
+    protected override void OnDestroy()
+    {
+
+        if (bulletTracer != null)
+        {
+            bulletTracer.SetPositionComponent(2, 0, 0);
+            bulletTracer.Destroy();
+        }
+        base.OnDestroy();
+    }
+
     private void CreateTracer()
     {
         if (!string.IsNullOrEmpty(tracerParticle))
         {
-            bulletTracer = Particles.Create(tracerParticle, this);
+            bulletTracer = Particles.Create(tracerParticle, Position);
             UpdateTracer();
         }
     }
 
     private void UpdateTracer()
     {
+        bulletTracer?.SetPosition(0, Position);
         bulletTracer?.SetPosition(1, Velocity);
+        bulletTracer?.SetPositionComponent(2, 0, 1);
     }
 
     public void BulletPhysics()

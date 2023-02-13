@@ -57,7 +57,7 @@ public class SPAS12 : WeaponBaseShotty
 
             BulletEjectParticle = "particles/pistol_ejectbrass.vpcf",
             MuzzleFlashParticle = "particles/swb/muzzle/flash_medium.vpcf",
-            BulletTracerParticle = "particles/swb/tracer/phys_tracer_medium.vpcf",
+            BulletTracerParticle = "particles/swb/tracer/tracer_medium_v2.vpcf",
 
             InfiniteAmmo = InfiniteAmmoType.reserve
         };

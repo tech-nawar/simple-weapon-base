@@ -75,7 +75,7 @@ public class L96A1 : WeaponBaseSniper
 
             BulletEjectParticle = "particles/pistol_ejectbrass.vpcf",
             MuzzleFlashParticle = "particles/swb/muzzle/flash_large.vpcf",
-            BulletTracerParticle = "particles/swb/tracer/phys_tracer_large.vpcf",
+            BulletTracerParticle = "particles/swb/tracer/tracer_large_v2.vpcf",
 
             InfiniteAmmo = InfiniteAmmoType.reserve
         };

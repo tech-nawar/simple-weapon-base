@@ -145,6 +145,10 @@ public partial class WeaponBase
 
     /// <summary>Bullet velocity modifier (phys bullets only)</summary>
     public float BulletVelocityMod = 1;
+    /// <summary>
+    /// How often a bullet has a tracer; (1 out of `BulletTracerChance` will have tracers) 
+    /// </summary>
+    public int BulletTracerChance = 3;
 
     // Private
     private bool doRecoil = false;
